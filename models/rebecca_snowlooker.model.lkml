@@ -3,12 +3,13 @@ connection: "snowlooker"
 # include all the views
 include: "/views/**/*.view"
 include: "/dashboards/*.dashboard"
+include: "/tests_for_case_studies.lkml"
 
 datagroup: adam_minton_case_study_default_datagroup {
   sql_trigger: SELECT CURRENT_DATE ;;
   max_cache_age: "24 hours"
 }
-aggregate_awareness: yes
+# aggregate_awareness: yes
 persist_with: adam_minton_case_study_default_datagroup
 
 access_grant: inventory {
